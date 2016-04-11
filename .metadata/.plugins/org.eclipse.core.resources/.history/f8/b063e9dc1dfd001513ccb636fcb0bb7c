@@ -1,0 +1,39 @@
+package com.doshin.jaxb.xsd;
+
+import java.io.File;
+import java.time.LocalDate;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+import com.doshin.jaxb.business.Country;
+import com.doshin.jaxbbeangen.Customer;
+
+public class MainCalss {
+
+	public static void main(String[] args) {
+		try {
+			/* init very simple data to marshal */
+			Customer amazon = new Customer();
+			amazon.setName("Spain");
+			amazon.setAddress("762 blue sage dr");
+
+			/* init jaxb marshaler */
+			JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
+			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+			/* set this flag to true to format the output */
+			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+			/*
+			 * marshaling of java objects in xml (output to file and standard
+			 * output)
+			 */
+			jaxbMarshaller.marshal(amazon, System.out);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.doshin.jaxb.xsd;
+
+public class MainCalss {
+
+	public static void main(String[] args) {
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.doshin.jaxb.xsd;
+
+import com.doshin.jaxbbeangen.Customer;
+
+public class MainCalss {
+
+	public static void main(String[] args) {
+		Customer asd = new Customer(); 
+		System.out.println(asd);
+	}
+
+}
